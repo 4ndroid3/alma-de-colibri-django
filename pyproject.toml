@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "colibri"
+version = "0.1.0"
+description = ""
+authors = ["Andres Jaimovich <andijaimo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+Django = "^5.0.1"
+psycopg2 = "^2.9.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+ruff = "^0.1.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
