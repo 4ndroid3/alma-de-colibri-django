@@ -20,7 +20,10 @@
         <div class="col-sm-2">
           {% block sidebar %}
             <ul class="sidebar-nav">
-              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'product_list' %}">List Products</a></li>
+              <li><a href="{% url 'product_create' %}">Create Products</a></li>
+              <li><a href="{% url 'category_list' %}">List Categories</a></li>
+              <li><a href="{% url 'category_create' %}">Create Categories</a></li>
             </ul>
           {% endblock %}
         </div>

@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% block content %}
+<ul>
+{% for product in products %}
+    <li>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <!-- Agrega aquí más detalles del producto según necesites -->
+    </li>
+{% empty %}
+    <li>No products available.</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 Django = "^5.0.1"
 psycopg2 = "^2.9.9"
+pillow = "^10.2.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.4"
@@ -17,3 +18,7 @@ ruff = "^0.1.13"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 100
