@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-d(^scy0j%2(io8dq^ami#2!&eoh5h&feno_qxai-n#e7lw59)%
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+AUTH_USER_MODEL = "core.User"
 
 # Application definition
 
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "core",
     "products",
+    "sales",
 ]
 
 MIDDLEWARE = [
@@ -70,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "project.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
