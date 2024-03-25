@@ -2,11 +2,17 @@
     "[python]": {
         "editor.rulers": [100],
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
-          }
+        }
     },
-    "ruff.lint.args": ["--config=pyproject.toml"],
-    "ruff.format.args": ["--config=pyproject.toml"]
+    "black-formatter.args": [
+        "--config",
+        "/workspace/pyproject.toml"
+    ],
+    "isort.args": [
+        "--settings-file",
+        "/workspace/pyproject.toml"
+    ],
 }
