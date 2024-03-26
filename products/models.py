@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta, timezone
+
 from django.db import models
 
 
@@ -37,6 +39,16 @@ class Product(models.Model):
         """Calculate the gain of the product."""
         return self.price - self.cost
 
+    def get_expiration_date(self) -> str:
+        """Calculate the expiration date of the product."""
+        return self.last_restocked_at + timedelta(days=self.expiration_days)
+
+    def is_in_stock(self) -> bool:
+        return self.stock > 0
+
+    def is_expired(self) -> bool:
+        return datetime.now().date() > self.get_expiration_date().date()
+
 
 class Category(models.Model):
     """Represents a category for products in the store."""
@@ -63,6 +75,12 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def product_count(self) -> int:
+        return self.products.count()
+
+    def average_product_price(self) -> float:
+        return self.products.aggregate(models.Avg("price"))["price__avg"]
+
 
 class Discount(models.Model):
     """Represents a discount for many elements in the store."""
@@ -88,3 +106,10 @@ class Discount(models.Model):
 
     def __str__(self):
         return self.name
+
+    def is_active(self) -> bool:
+        now = timezone.now()
+        return self.start_date <= now <= self.end_date
+
+    def discounted_product_count(self) -> int:
+        return Product.objects.filter(related_discount=self).count()
