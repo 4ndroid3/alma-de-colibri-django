@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>ADC Developers Tools Page</h1>
+        <marquee behavior="" direction=""> This page should be commented on production</marquee>
+        <h1>🛠️ ADC Developers Tools Page 🐣</h1>
         <nav>
             <ul>
                 <li>
@@ -25,6 +26,7 @@
 
     <main>
         <section>
+
             <article>
                 <p>
                     As a result of an incident that occurred during product API testing, 
@@ -32,10 +34,56 @@
                 </p>
                 <ul>
                     <li>
-                        <a href="#">Emergency Products Reset</a>
+                        <a href="{% url 'products-reset' %}">Emergency Products Reset </a> ⚠️ <mark><em>Clicking this URL will reset all products</em></mark>
                     </li>
                 </ul>
             </article>
+        </section>
+        <br><br><br>
+        <section>
+            <h2>🔌 Endpoints</h2>
+            <ul>
+
+                <li>
+                    <a href="#">Products</a>
+                    <ul>
+                        <li>
+                            <a href="/api/products/products/">/api/products/products/"</a>
+                        </li>
+                        <li>
+                            <a href="/api/products/categories/">/api/products/categories/"</a>
+                        </li>
+                        <li>
+                            <a href="/api/products/discounts/">/api/products/discounts/"</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Sales</a>
+                    <ul>
+                        <li>
+                            <a href="/api/sales/products/">/api/sales/products/</a>
+                        </li>
+                        <li>
+                            <a href="/api/sales/categories/">/api/sales/categories/</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">core</a>
+                    <ul>
+                        <li>
+                            <a href="/api/core/cities/">/api/core/cities/</a>
+                        </li>
+                        <li>
+                            <a href="/api/core/users/">/api/core/users/</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
         </section>
     </main>
 

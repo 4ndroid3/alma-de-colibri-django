@@ -11,7 +11,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     cost = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     related_categories = models.ManyToManyField("Category", related_name="products")
-    image = models.ImageField(upload_to="products/", blank=True, null=True)
+    image = models.ImageField(upload_to="products/media/", blank=True, null=True)
     stock = models.IntegerField(default=0)
     last_restocked_at = models.DateField(null=True, blank=True)
     expiration_days = models.IntegerField(null=True, blank=True)
