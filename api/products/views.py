@@ -7,6 +7,7 @@ from products.models import Category, Discount, Product
 class ProductView(mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = Product.objects.all().order_by("id")
     serializer_class = ProductSerializer
+    
 
 
 class CategoryView(mixins.ListModelMixin, viewsets.GenericViewSet):

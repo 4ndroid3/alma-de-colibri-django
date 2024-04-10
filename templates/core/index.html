@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Centered viewport --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <title>ADC Developers Tools Page</title>
+</head>
+<body>
+    <header>
+        <h1>ADC Developers Tools Page</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                 </li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <article>
+                <p>
+                    As a result of an incident that occurred during product API testing, 
+                    I was forced to create a view to reset the products.
+                </p>
+                <ul>
+                    <li>
+                        <a href="#">Emergency Products Reset</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
